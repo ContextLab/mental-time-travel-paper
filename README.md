@@ -5,7 +5,7 @@ This repository contains data and code used to produce the paper "_Episodic memo
 ```
 root
 └── code : all code used in the paper
-    ├── notebooks : jupyter notebooks for paper analyses
+    └── notebooks : jupyter notebooks for paper analyses
 └── data : all data used in the paper
     ├── raw : raw data before processing
     └── processed : all processed data
