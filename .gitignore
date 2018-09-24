@@ -1,2 +1,8 @@
 *checkpoint.ipynb
 *.DS_Store
+*.aux
+*.bbl
+*.blg
+*.log
+*.synctex.gz
+main.pdf
