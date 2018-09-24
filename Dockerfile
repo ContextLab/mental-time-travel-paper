@@ -48,7 +48,6 @@ RUN pip install --upgrade git+https://github.com/IntelPNI/brainiak \
 # add some useful directories as mirrors of directors in the same location on your computer
 ADD data /data
 ADD code /code
-ADD paper /paper
 
 # Finally, expose a port from within the docker so we can use it to run
 # jupyter notebooks
