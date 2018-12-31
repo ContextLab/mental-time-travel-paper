@@ -7,3 +7,4 @@
 *.synctex.gz
 main.pdf
 brains.ipynb
+.vscode/*
