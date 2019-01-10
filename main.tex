@@ -62,75 +62,26 @@ It is difficult to explicitly test whether (apparent) semantic reinstatement in 
 \section*{The shapes of remembered experiences}
 In a recent study~\citep{HeusEtal18c} my lab examined functional neuroimaging and behavioral data collected by \cite{ChenEtal17} as participants viewed and then verbally recalled an episode of a television show.  We used topic models~\citep{BleiEtal03} to characterize the moment-by-moment content of the episode and of participants' recalls.  Each moment was quantified via a \textit{topic vector} that reflected the mix of topics (themes) the model identified in that moment.  In this way, the sequence of topic vectors over the course of the episode traces out a \textit{topic trajectory} through a high-dimensional feature space.  The sequence of topic vectors for a given participant's recalls traces out an analogous trajectory.  This characterization provides a geometric framework for comparing the \textit{shapes} that reflect how naturalistic experiences unfold over time, to the shapes of how we remember those experiences later (Fig.~\ref{fig:trajectories}).  One can then use the geometric transformations needed to map an experience's trajectory onto the trajectory of its later remembering to characterize the quality and content of memory.
 
+\begin{figure}[tp]
+\centering
+\includegraphics[width=0.8\textwidth]{figs/trajectory}
+\caption{\textbf{The shape of an unfolding experience.}  \textbf{A. The trajectory through topic space taken by a television episode.} The topic trajectory taken by a 50 minute television episode, projected onto two dimensions.  Each dot indicates an event identified using a Hidden Markov Model; the dot colors denote the order of the events (early events are in red; later events are in blue), and the connecting lines indicate the transitions between successive events.  \textbf{B. The trajectory through topic space taken by participants' recalls of the television episode.} The average two-dimensional trajectory captured by 17 participants' recalls of the episode, with the same format and coloring as the trajectory in Panel A. The arrows reflect the directions of the average transitions taken by participants whose trajectories crossed that part of topic space; blue denotes reliable agreement across participants.  Figure adapted from \cite{HeusEtal18c}.}
+\label{fig:trajectories}
+\end{figure}
+
 The specific ties between unfolding events forms a scaffolding for understanding how those events are related.  In addition to serving as a framework for quantifying the dynamic content of experiences, these trajectories may be visualized geometrically by projecting word embedding representations of the events onto lower dimensional spaces~\citep[e.g., ][]{HeusEtal18a}; for additional discussion and counterpoints see~\citep{JollChan18}.  \cite{HeusEtal18c} applied this approach to the same dataset reflected in Figures~\ref{fig:corrmats}, \ref{fig:reinstatement}, and~\ref{fig:trajectories}, reveals another key property of how we remember.  Although there are substantial individual differences in the specific words people use to describe a shared experience, and how much detail they get into, the overall ``shapes'' of those recalled experience trajectories are highly similar across people.  This has potentially exciting implications for how we communicate memories to other people: we need to convey the ``gist'' (shape) of our experience.  It also has implications for how we learn by analogy: perhaps events that share schemas~\citep[e.g., ][]{BaldEtal18}  unfold in similar ways (e.g., have similar shapes).  Learning which shapes go with which schemas could provide a scaffolding for rapid learning and generalization of new experiences, to the extent that those new experiences match a previously learned schema (shape).
 
 % analysis idea: matrix of reinstatement functions for each timepoint-- e.g. considering each timepoint in turn (rows), how much are participants (on average) using language that mirrors how they talk about each other timepoint (columns).  there should be a strong diagonal, with some blockiness, and possibly some disjoint groups showing how events cluster.
 
-\textbf{JRM STOPPED HERE}
-
-\section*{BRAINSTORMING OUTLINE OF THE REST OF THE PAPER}
-\begin{enumerate}
-  \item \textit{Show video correlation matrix + recall correlation matrix.  Key idea: off-diagonal mass is introduced (primarily) by how people \textit{remember} the movie, not due to the contents of the movie itself (evidence: correlation matrices).  Further, this is not simply a matter of imprecision in how people recall, and/or our approach's ability to characterize recalled events (evidence: reinstatement figure showing which scenes are recalled similarly).  This sort of integration is how we ascribe meaning to events that unfold over disjointed extended timescales.}
-  \item \textit{In theory this could also happen during \textit{any} sort of experience.  For example, when people study random word lists, they often re-order their recalls so that semantically related words are closer in the recall sequence than they were in the presented sequence.  This can be captured to an extent by semantic clustering measures.  However, it's difficult to examine this phenomenon in more depth because word lists necessarily lack the richness of more naturalistic stimuli.  There are no ``deeper ties'' between study events (i.e., individual words), so the sorts of integration operations that allow us to make sense of real-world experiences aren't given the same freedom of expression in list-learning experiments.  Evidence: presentation/recall correlation matrices during random free recall don't show the same sort of off-diagonal increase.  Claim: mental time travel and quantum wave reinstatement look the same for random word list remembering, but very different for real-world remembering.}
-  \item \textit{The specific ties between unfolding events forms a scaffolding for understanding how those events are related.  This can be visualized geometrically by projecting word embedding representations of the events onto lower dimensional spaces (although see Flatland Fallacy paper, with HyperTools paper as a potential counterpoint).  This reveals another key property of how we remember: although there are substantial individual differences in the specific words people use to describe a shared experience, and how much detail they get into, the overall ``shapes'' of those recalled experience trajectories are highly similar across people.  This has potentially exciting implications for how we communicate memories to other people: we need to convey the ``gist'' (shape) of our experience.  It also has implications for how we learn by analogy: perhaps events that share schemas (cite Baldassano et al) unfold in similar ways (e.g. have similar shapes).  Learning which shapes go with which schemas could provide a scaffolding for rapid learning and generalization of new experiences, to the extent that those new experiences match a previously learned schema (shape).}
-    \item These ideas also have implications for other forms of learning (e.g. spatial learning) and neural decoding.  When we attempt to characterize thoughts (e.g. training a classifier to distinguish between states), we tend to train decoders to estimate the ``one'' state that the brain is in.  However, perhaps we should instead consider that our brains are contemplating, or holding in our thoughts, many possible states simultaneously.  Therefore we should consider the full distribution of states (rather than only considering its maximum) as a primary metric of characterizing mental function.  (Probably people have proposed this-- e.g. representing the posterior and using it to compute...need citations.)
-    \end{enumerate}
 
 
-
-
-
-
-
-
-
-\textbf{JRM NOTE: add section on the temporal structure of list-learning vs. naturalistic stimulus, and on the temporal structure of recalls.}
-
-
-
-
-\begin{figure}[tp]
-\centering
-\includegraphics[width=0.8\textwidth]{figs/trajectory}
-\caption{\textbf{Topic trajectories of a video and its memory.}  \textbf{A.} The topic trajectory taken by a 50 minute television episode, projected onto two dimensions.  Each dot indicates an event identified using a Hidden Markov Model; the dot colors denote the order of the events (early events are in red; later events are in blue), and the connecting lines indicate the transitions between successive events.  \textbf{B.} The average two-dimensional trajectory captured by 17 participants' recalls of the episode, with the same format and coloring as the trajectory in Panel A. The arrows reflect the directions of the average transitions taken by participants whose trajectories crossed that part of topic space; blue denotes reliable agreement across participants.  Figure adapted from \cite{HeusEtal18c}.}
-\label{fig:trajectories}
-\end{figure}
-
-
-
-defines a distinction between the gist
-
-
-\begin{itemize}
-\item Not about the number of details-- it's about capturing the overall ``shape'' of past experience
-\item Quantifying recall should be about the match between the shape of the original experience (i.e., the covariance structure describing how it unfolds over time), not about the number of details that are recovered
-\item When we retrieve memories, we cast ourselves along the full trajectory simultaneously (perhaps covering each component to a different degree), not to a single point (moment)
-\item Predictions:
-\begin{itemize}
-    \item What makes an effective summary?  One that efficiently captures the overall shape of the experience.
-    \item How do we communicate our experiences to others?  Describe the path through conceptual space.
-    \item How do we communicate our experiences to our ``future selves?''  Describe the path through conceptual space.
-    \item Each of these notions is fundamentally about the full trajectory, not about a single point.  Each moment derives meaning only in the context of the rest of experience.
-\end{itemize}
-\item What can list learning tell us?  We get fine control over  contextual representations at a very limited set of timescales.  We can study the detailed impacts of manipulations on memory.
-\item What can't list learning tell us?  We can ask whether people precisely reproduce their prior experiences.  But we can't know whether they recover the ``gist'' of those experiences, since random lists do not have meaningful gists.
-\item Other thoughts (from previous brainstorms):
-    \begin{itemize}
-    \item Reactivated neural representations that seem like noise should actually have predictive power for later memories if they get incorporated into the mental state at the time of remembering.
-    \item List learning experiments and other experiments with discrete trials are not well equipped to study time spreading because they effectively impose event boundaries around and between every stimulus presentation.  Rather, we need continuous naturalistic recall experiments to more accurately reflect how our brains operate in the real world.
-    \item say something about slow drift vs. reinstatement (cite MannEtal11 and FolkEtal18)
-    \item something about schema learning (related to semantic memory?) and how memories are compressed (Chen et al 2017, Baldassano et al 2017, 2018) and transmitted to others
-    \end{itemize}
-\end{itemize}
-
-
-Our brains exhibit autocorrelated activity.  In the extreme this is trivially true; our brains are biophysical systems that cannot change infinitely quickly, so neural activity patterns are necessarily similar (to some extent) from one moment to the next.  However, autocorrelated activity patterns \textit{at the time scales we typically examine in laboratory memory studies} are far stronger and persist for far longer than is strictly necessary from a biophysical standpoint.  For example, transient changes in neuronal membrane potentials during action potentials can last just a few milliseconds~\citep{HodgHuxl52} and even local field potentials that reflect the synchronized activities of tens of thousands of neurons can exhibit millisecond timescale changes~\citep{Frie05, Buzs06}.  Nevertheless, our brain activity pattern can remain reliably autocorrelated at timescales of seconds or longer-- and these long timescale autocorrelations predict how our ongoing experiences are remembered later~\citep[e.g.][]{MannEtal07, MannEtal11, HowaEtal12, FolkEtal18}.
-
-\section*{Implications}
 \subsection*{Extensions to spatial and semantic memory}
-Just as we mentally spread ourselves across a distribution of times, we can perform similar mental operations when we conceptualize and retrieve other types of information.  For example, consider how we use pattern classifiers to connect neural activity patterns to specific semantic~\citep{PolyEtal05, MitcEtal08, MannEtal12} or spatial~\citep{MillEtal13} content being mentally manipulated.  The prevailing approach is to label specific brain activity patterns as each reflecting \textit{one particular} semantic concept or spatial location.  Variability in neural activity over repeated experiences or rememberings can result in classifiers spreading their predictions over multiple possible mental states.  Traditional approaches then ``clean up'' this distribution over possible mental states by taking its expected or maximum value.  However, following the ``quantum wave function'' logic, I suggest that the specific shape of these distributions may not only be informative, but they are \textit{more accurate reflections of what our neural activity patterns actually reflect}.
+Just as we mentally spread ourselves across a distribution of times, we can perform similar mental operations when we conceptualize and retrieve other types of information.  For example, consider how we use pattern classifiers to connect neural activity patterns to specific semantic~\citep{PolyEtal05, MitcEtal08, MannEtal12} or spatial~\citep{MillEtal13} content being mentally manipulated.  The prevailing approach is to label specific brain activity patterns as each reflecting \textit{one particular} semantic concept or spatial location.  Variability in neural activity over repeated experiences or rememberings can result in classifiers spreading their predictions over multiple possible mental states.  Traditional approaches then ``clean up'' this distribution over possible mental states by taking its expected or maximum value.  However, following the ``quantum wave function'' logic, I suggest that the specific shape of these distributions may not only be informative, but they are \textit{more accurate reflections of what our neural activity patterns actually reflect}.  What are the implications of this view?
+
+
 
 \section*{Concluding remarks}
+
 
 \bibliographystyle{apa}
 \bibliography{CDL-bibliography/memlab}
