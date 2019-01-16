@@ -38,9 +38,9 @@ RUN conda install -c conda-forge jupyterlab
 RUN pip install --upgrade git+https://github.com/IntelPNI/brainiak \
     hypertools \
     seaborn \
-    quail \
     scikit-learn \
-    ffmpeg
+    ffmpeg \
+    scipy
 
 # add some useful directories as mirrors of directors in the same location on your computer
 ADD data /data
