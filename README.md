@@ -1,6 +1,6 @@
-# Episodic memory: mental time travel or quantum wave function?
+# Episodic memory: mental time travel or quantum 'memory wave' function?
 
-This repository contains data and code used to produce the paper ["_Episodic memory: mental time travel or quantum wave function?_"](https://psyarxiv.com/6zjwb) by Jeremy R. Manning. The repository is organized as follows:
+This repository contains data and code used to produce the paper ["_Episodic memory: mental time travel or quantum 'memory wave' function?_"](https://psyarxiv.com/6zjwb) by Jeremy R. Manning. The repository is organized as follows:
 
 ```
 root
