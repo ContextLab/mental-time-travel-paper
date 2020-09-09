@@ -35,12 +35,13 @@ RUN conda update setuptools
 RUN conda install -c conda-forge jupyterlab
 
 # Install packages needed
-RUN pip install --upgrade git+https://github.com/IntelPNI/brainiak \
+RUN pip install --upgrade \
     hypertools \
     seaborn \
     scikit-learn \
     ffmpeg \
-    scipy
+    scipy \
+    git+https://github.com/brainiak/brainiak.git@v0.7.1
 
 # add some useful directories as mirrors of directors in the same location on your computer
 ADD data /data
