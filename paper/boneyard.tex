@@ -12,6 +12,29 @@ The central limitation of the mental time travel metaphor that the quantum memor
 
 
 
+
+
+
+% deep learning approaches:
+% - bag of words vs. sequence models vs. sentence-level embeddings
+% - accounting for use of context and grammar to convey meaning
+% - pre-training vs. customized training vs. training-free
+
+% Neural Probabilistilc Language Model (NPLM): BengEtal03 --> explicitly model word sequences
+% Scalable Hierarchical Distributed Language Model (SHDLM): MnihHint09 --> sequences of word trees
+
+%word2vec: MikoEtal13 --> semantic relations reflected in geometric operations
+%GloVe: PennEtal14 --> combines matrix factorization and local context window methods
+%SkipThought: KiroEtal15 --> reconstructs surrounding sentences of an encoded passage
+%BERT: DevlEtal18 --> pretraining language representations, context dependence of word embeddings
+%ELMO: PeteEtal18 --> how is it different from BERT/GPT?
+%InferSent: ConnEtal18 --> embeddings of sentences
+%Universal Sentence Encoder: CerEtal18 --> embeddings of sentences
+%Open-GPT: RadfEtal18 --> pretrained transformer (how is it different from BERT?)
+%RandSent: WietKiel19 --> training-free sentence-level embeddings
+%GPT-2: RadfEtal19
+%GPT-3: BrowEtal20
+
   .  The transformed outputs distort the original inputs in a way that often enables subseqeuent components of a deep text embedding model to compute more stable and meaningful embeddings.  \textit{Deep averaging networks} pool information from different observations in the original data in order to magnify small but meaningful differences.  \textit{Recurrent neural networks} (and variants) are often used to model temporal relations in sequence data~\citep[the deep averaging network and recurrent neural network diagrams are loosely inspired by figures from][]{IyyeEtal15}.  \textit{Deep autoencoders} attempt to reconstruct inputted patterns after passing them through a series of increasingly smaller layers in an encoding network.  The resulting activation patterns in the discriminator layer, which contains the fewest number of neurons, may be used as a low-dimensional embedding of the input.  The discriminator's activations are then passed through a decoder network which contains successively larger layers.  Finally, a reconstructed output is produced.  After fitting this model, outputs may be estimated from arbitrary activations of the discriminator layer~\citep[diagram loosly inspired by][]{YousHame17}.
 
 
