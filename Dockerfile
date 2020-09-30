@@ -1,52 +1,31 @@
-FROM debian:latest
+FROM debian:stretch
 
-# Install necessary linux packages from apt-get
-RUN apt-get update --fix-missing && apt-get install -y eatmydata
+ARG DEBIAN_FRONTEND=noninteractive
 
-RUN eatmydata apt-get install -y wget bzip2 ca-certificates \
-    libglib2.0-0 libxext6 libsm6 libxrender1 \
-    git \
-    libfreetype6-dev \
-    swig \
-    mpich \
-    pkg-config \
-    gcc \
-    wget \
-    curl \
-    vim \
-    nano
-
-# Install anaconda
-RUN echo 'export PATH=/opt/conda/bin:$PATH' > /etc/profile.d/conda.sh && \
-    wget --quiet https://repo.continuum.io/archive/Anaconda3-4.4.0-Linux-x86_64.sh -O ~/anaconda.sh && \
-    /bin/bash ~/anaconda.sh -b -p /opt/conda && \
-    rm ~/anaconda.sh
-
-# Setup anaconda path
+ENV LANG C.UTF-8
 ENV PATH /opt/conda/bin:$PATH
 
-# Install gcc to make it work with brainiak
-RUN ["/bin/bash", "-c", "conda install -y gcc"]
+SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
-# update setuptools
-RUN conda update setuptools
+RUN apt-get update --fix-missing \
+    && apt-get install -y --no-install-recommends eatmydata \
+    && eatmydata apt-get install -y --no-install-recommends \
+        ca-certificates \
+        wget \
+        vim \
+    && rm -rf /var/lib/apt/lists/* \
+    && wget --quiet https://repo.anaconda.com/miniconda/Miniconda3-py37_4.8.3-Linux-x86_64.sh -O ~/miniconda.sh \
+    && /bin/bash ~/miniconda.sh -b -p /opt/conda \
+    && rm ~/miniconda.sh \
+    && conda update setuptools \
+    && conda install -c brainiak -c defaults -c conda-forge --strict-channel-priority \
+        brainiak=0.10 \
+        matplotlib=3.2.2 \
+        notebook=6.0.3 \
+        pandas=1.0.5 \
+        seaborn=0.10.1 \
+    && conda clean --all -f -y \
+    && pip install --no-cache-dir hypertools==0.6.2
 
-# install jupyter lab
-RUN conda install -c conda-forge jupyterlab
-
-# Install packages needed
-RUN pip install --upgrade git+https://github.com/IntelPNI/brainiak \
-    hypertools \
-    seaborn \
-    scikit-learn \
-    ffmpeg \
-    scipy
-
-# add some useful directories as mirrors of directors in the same location on your computer
-ADD data /data
-ADD code /code
-ADD figs /figs
-
-# Finally, expose a port from within the docker so we can use it to run
-# jupyter notebooks
-EXPOSE 9999
+# Set default working directory to repo mountpoint
+WORKDIR /mnt
