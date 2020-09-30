@@ -13,3 +13,7 @@ RUN conda install -c brainiak \
 
 # Set default working directory to repo mountpoint
 WORKDIR /mnt
+
+# Unset Python shell command from parent
+ENTRYPOINT ["/usr/bin/env"]
+CMD ["bash"]
