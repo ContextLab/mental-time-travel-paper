@@ -1,0 +1,2 @@
+# can exclude all files from build context since container will be mounted to repo
+*
